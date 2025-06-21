@@ -15,7 +15,7 @@ class Tweet(db.Model):
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
     #relationships
-    user = db.relationship("User", back_populates="tweet")
+    user = db.relationship("User", back_populates="tweets")
     comments = db.relationship("Comment", back_populates="tweet")
     likes = db.relationship("Like", back_populates="tweet")
     images = db.relationship("Image", back_populates="tweet")
